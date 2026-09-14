@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banana Artist Launch — Ops & Client Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="brand-name">BANANA SOUND STUDIO</div>
+        <div class="brand-sub">ARTIST LAUNCH OS</div>
+      </div>
+    </div>
+    <div class="mode-switch" role="tablist">
+      <button class="mode-btn active" data-mode="client">CLIENT PORTAL</button>
+      <button class="mode-btn" data-mode="ops">STUDIO OPS</button>
+    </div>
+    <div class="profile-chip">
+      <div class="avatar">BS</div>
+      <div class="profile-text"><strong>Banana Team</strong><span>Bangkok · 2026</span></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- CLIENT PORTAL -->
+    <section id="clientView" class="view active">
+      <section class="hero client-hero">
+        <div class="hero-copy">
+          <div class="eyebrow">FROM DREAM → RELEASED ARTIST</div>
+          <h1>มีเพลงของตัวเอง<br><span>เริ่มได้จากที่นี่</span></h1>
+          <p>บริการ One-stop Artist Launch ตั้งแต่ Brief, แต่งเพลง, Demo, Production, Recording, Mix & Master จนถึงปล่อย Streaming</p>
+          <div class="hero-actions">
+            <button class="btn primary" id="startJourneyBtn">เริ่ม Artist Journey</button>
+            <button class="btn ghost" id="seePackageBtn">ดูรายละเอียด 60K</button>
+          </div>
+        </div>
+        <div class="hero-card glass">
+          <div class="price-label">HERO PRODUCT</div>
+          <div class="price">60,000 <small>บาท</small></div>
+          <div class="price-sub">1 Original Single · จาก Brief → พร้อมปล่อย</div>
+          <div class="journey-mini">
+            <div><b>01</b><span>Brief</span></div><i>→</i>
+            <div><b>02</b><span>Demo</span></div><i>→</i>
+            <div><b>03</b><span>Produce</span></div><i>→</i>
+            <div><b>04</b><span>Record</span></div><i>→</i>
+            <div><b>05</b><span>Release</span></div>
+          </div>
+          <div class="payment-row"><span>50% Booking</span><span>30% Demo</span><span>20% Release</span></div>
+        </div>
+      </section>
+
+      <section class="section-grid client-grid">
+        <div class="panel package-panel" id="packagePanel">
+          <div class="panel-head">
+            <div><span class="kicker">PACKAGE</span><h2>Artist Launch 60K</h2></div>
+            <span class="badge live">ONE PRICE · ONE PROMISE</span>
+          </div>
+          <div class="package-list">
+            <article><div class="num">01</div><h3>Artist Brief</h3><p>คุยตัวตน เป้าหมาย แนวเพลง และ Reference 1 ชั่วโมง</p></article>
+            <article><div class="num">02</div><h3>Original Song + AI Demo</h3><p>แต่งเพลงพร้อม Demo ภายใน 3 วัน และ Revision 2 รอบ</p></article>
+            <article><div class="num">03</div><h3>Production</h3><p>เรียบเรียงและผลิตเพลงจาก Demo ที่ Approved</p></article>
+            <article><div class="num">04</div><h3>Vocal Recording</h3><p>Recording Session 3 ชั่วโมง พร้อม Vocal Direction</p></article>
+            <article><div class="num">05</div><h3>Mix & Master</h3><p>Edit / Tune / Mix / Master พร้อม Final QC</p></article>
+            <article><div class="num">06</div><h3>Streaming Release</h3><p>เตรียม Metadata และส่งขึ้นแพลตฟอร์ม Streaming</p></article>
+          </div>
+        </div>
+
+        <div class="panel add-on-panel">
+          <div class="panel-head"><div><span class="kicker">ADD-ONS</span><h2>ถ้าต้องการไปไกลกว่า 1 เพลง</h2></div></div>
+          <div class="tag-cloud">
+            <span>Vocal Coach</span><span>MV / Content</span><span>Photoshoot</span><span>Styling</span><span>PR / Promotion</span><span>Live Session</span><span>Dance Coach</span>
+          </div>
+          <p class="muted">ถ้าร้องยังไม่พร้อม สามารถ Pause Project และเข้า Vocal Coach 2–4 สัปดาห์ก่อนกลับมา Recording ใหม่ได้</p>
+        </div>
+      </section>
+
+      <section class="panel intake-panel" id="intakePanel">
+        <div class="panel-head">
+          <div><span class="kicker">NEW ARTIST INTAKE</span><h2>เริ่มโปรเจกต์ใหม่</h2></div>
+          <div class="step-indicator"><span class="active">1</span><span>2</span><span>3</span></div>
+        </div>
+        <form id="artistIntakeForm">
+          <div class="form-step active" data-step="1">
+            <div class="field-grid">
+              <label><span>ชื่อ / ชื่อศิลปิน</span><input required name="artistName" placeholder="เช่น Tita / ต้นน้ำ" /></label>
+              <label><span>อายุ</span><input required name="age" type="number" min="8" max="80" placeholder="20" /></label>
+              <label><span>เบอร์โทร</span><input required name="phone" placeholder="08X-XXX-XXXX" /></label>
+              <label><span>LINE / Instagram</span><input name="contact" placeholder="@username" /></label>
+            </div>
+            <label><span>ความฝันของคุณคืออะไร?</span><textarea required name="dream" rows="4" placeholder="อยากมีเพลงแรกของตัวเอง / อยากเป็นศิลปิน / อยากสร้าง Portfolio..."></textarea></label>
+          </div>
+          <div class="form-step" data-step="2">
+            <div class="field-grid">
+              <label><span>แนวเพลงที่ชอบ</span><select name="genre"><option>Pop</option><option>Indie Pop</option><option>R&B</option><option>Hip-Hop</option><option>Rock</option><option>Thai Pop</option><option>Other</option></select></label>
+              <label><span>Reference Artist / Song</span><input name="reference" placeholder="เช่น wave to earth, NewJeans..." /></label>
+              <label><span>ระดับประสบการณ์ร้องเพลง</span><select name="experience"><option>เริ่มต้น</option><option>เรียนร้องเพลงอยู่</option><option>เคยขึ้นเวที / Cover</option><option>เคยออกเพลงแล้ว</option></select></label>
+              <label><span>เป้าหมายวันปล่อยเพลง</span><input name="releaseTarget" type="date" /></label>
+            </div>
+            <label><span>ลิงก์ผลงาน / TikTok / YouTube (ถ้ามี)</span><input name="portfolio" placeholder="https://..." /></label>
+          </div>
+          <div class="form-step" data-step="3">
+            <div class="summary-card">
+              <div class="summary-icon">★</div>
+              <div><h3>Artist Launch 60K</h3><p>มัดจำ 50% เพื่อจองคิว · เริ่ม Brief หลังทีมติดต่อยืนยัน</p></div>
+              <div class="summary-price">30,000 <small>บาท</small><span>Booking Deposit</span></div>
+            </div>
+            <label class="consent"><input required type="checkbox" /> <span>ยืนยันว่าข้อมูลถูกต้อง และยินยอมให้ทีม Banana Sound Studio ติดต่อกลับเพื่อเริ่ม Artist Brief</span></label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn ghost" id="prevStepBtn" disabled>ย้อนกลับ</button>
+            <button type="button" class="btn primary" id="nextStepBtn">ถัดไป</button>
+            <button type="submit" class="btn primary hidden" id="submitIntakeBtn">ส่งข้อมูลเริ่มโปรเจกต์</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel track-panel">
+        <div class="panel-head"><div><span class="kicker">PROJECT TRACKING</span><h2>เช็กสถานะโปรเจกต์</h2></div></div>
+        <div class="track-row">
+          <input id="trackCode" placeholder="ใส่ Project Code เช่น BA-26001" />
+          <button class="btn ghost" id="trackBtn">เช็กสถานะ</button>
+        </div>
+        <div id="trackResult" class="track-result muted">เดโมจะใช้ Project Code จากรายการตัวอย่างใน Studio Ops</div>
+      </section>
+    </section>
+
+    <!-- STUDIO OPS -->
+    <section id="opsView" class="view">
+      <section class="ops-shell">
+        <aside class="sidebar">
+          <button class="nav-item active" data-page="dashboard">◉ <span>Dashboard</span></button>
+          <button class="nav-item" data-page="pipeline">◎ <span>Sales Pipeline</span></button>
+          <button class="nav-item" data-page="projects">▦ <span>Project Board</span></button>
+          <button class="nav-item" data-page="finance">฿ <span>Finance</span></button>
+          <button class="nav-item" data-page="settings">⚙ <span>Rules & SLA</span></button>
+          <div class="side-spacer"></div>
+          <div class="goal-card"><span>MONTHLY GOAL</span><strong>20 SONGS</strong><div class="goal-bar"><i style="width:35%"></i></div><small>7 / 20 projects</small></div>
+        </aside>
+
+        <div class="ops-content">
+          <section class="ops-page active" id="page-dashboard">
+            <div class="page-head"><div><span class="kicker">STUDIO OPS</span><h1>Artist Launch Dashboard</h1></div><button class="btn primary" id="quickAddBtn">+ New Lead</button></div>
+            <div class="metric-grid">
+              <article class="metric"><span>Revenue Pipeline</span><strong id="metricRevenue">฿420K</strong><small>7 active projects</small></article>
+              <article class="metric"><span>Paid Projects</span><strong id="metricPaid">7</strong><small>Target 20 / month</small></article>
+              <article class="metric"><span>Need Approval</span><strong id="metricApproval">2</strong><small>Action today</small></article>
+              <article class="metric"><span>On-time Rate</span><strong>86%</strong><small>↑ 8% vs last month</small></article>
+            </div>
+
+            <div class="two-col">
+              <div class="panel compact">
+                <div class="panel-head"><div><span class="kicker">FLOW</span><h2>Production Lanes</h2></div><span class="badge live">WIP CONTROL</span></div>
+                <div class="lane-list" id="laneList"></div>
+              </div>
+              <div class="panel compact">
+                <div class="panel-head"><div><span class="kicker">TODAY</span><h2>Needs Attention</h2></div></div>
+                <div class="attention-list" id="attentionList"></div>
+              </div>
+            </div>
+
+            <div class="panel compact">
+              <div class="panel-head"><div><span class="kicker">SNOWBALL</span><h2>Growth Flywheel</h2></div></div>
+              <div class="flywheel">
+                <div><span>01</span><b>Sell</b><em>60K</em></div><i>→</i>
+                <div><span>02</span><b>Growth Fund</b><em>6K</em></div><i>→</i>
+                <div><span>03</span><b>More Leads</b><em>Ads / Referral</em></div><i>→</i>
+                <div><span>04</span><b>Case Study</b><em>Conversion ↑</em></div><i>→</i>
+                <div><span>05</span><b>Scale</b><em>5 → 10 → 20</em></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="ops-page" id="page-pipeline">
+            <div class="page-head"><div><span class="kicker">SALES ENGINE</span><h1>Lead Pipeline</h1></div><button class="btn primary" id="pipelineAddBtn">+ New Lead</button></div>
+            <div class="funnel-row"><div><b>100</b><span>Inquiries</span></div><i>→</i><div><b>50</b><span>Qualified</span></div><i>→</i><div><b>30</b><span>Consult</span></div><i>→</i><div class="paid"><b>20</b><span>Paid Target</span></div></div>
+            <div class="panel compact table-panel"><div class="table-toolbar"><input id="leadSearch" placeholder="ค้นหาชื่อลูกค้า..." /><select id="leadStatusFilter"><option value="all">ทุกสถานะ</option><option>Inquiry</option><option>Qualified</option><option>Consult</option><option>Paid</option></select></div><div class="table-wrap"><table><thead><tr><th>Lead</th><th>Source</th><th>Status</th><th>Value</th><th>Owner</th><th>Next Action</th></tr></thead><tbody id="leadTableBody"></tbody></table></div></div>
+          </section>
+
+          <section class="ops-page" id="page-projects">
+            <div class="page-head"><div><span class="kicker">THE NEW FACTORY</span><h1>Project Board</h1></div><div class="page-actions"><select id="roleFilter"><option value="all">All Owners</option><option>ทีมจุ๊</option><option>ทีมเอส</option><option>ทีมหนึ่ง</option><option>Post / PM</option></select></div></div>
+            <div class="kanban" id="kanbanBoard"></div>
+          </section>
+
+          <section class="ops-page" id="page-finance">
+            <div class="page-head"><div><span class="kicker">UNIT ECONOMICS</span><h1>60,000 บาท / 1 เพลง — เงินไปไหน?</h1></div></div>
+            <div class="finance-grid">
+              <article class="finance-card green"><span>20%</span><h3>Job Fee Pool</h3><strong>฿12,000</strong><small>Sales 5% · Creative 6% · Production 5% · Post/PM 4%</small></article>
+              <article class="finance-card purple"><span>10%</span><h3>Growth Fund</h3><strong>฿6,000</strong><small>Ads · Referral · Market Experiment</small></article>
+              <article class="finance-card green"><span>10%</span><h3>Direct / Reserve</h3><strong>฿6,000</strong><small>Direct cost · Risk reserve</small></article>
+              <article class="finance-card purple"><span>60%</span><h3>Company Contribution</h3><strong>฿36,000</strong><small>Fixed salary · Rent · Admin · Tax · Profit</small></article>
+            </div>
+            <div class="two-col finance-bottom">
+              <div class="panel compact"><div class="panel-head"><div><span class="kicker">SCENARIO</span><h2>Monthly Scale Calculator</h2></div></div><label class="range-label"><span>จำนวนเพลง / เดือน</span><strong id="songCountLabel">10</strong></label><input class="range" id="songCountRange" type="range" min="1" max="25" value="10" /><div class="calc-grid"><div><span>Revenue</span><b id="calcRevenue">฿600,000</b></div><div><span>Job Fees</span><b id="calcJobFee">฿120,000</b></div><div><span>Growth Fund</span><b id="calcGrowth">฿60,000</b></div><div><span>Company Contribution</span><b id="calcCompany">฿360,000</b></div></div></div>
+              <div class="panel compact"><div class="panel-head"><div><span class="kicker">BREAK-EVEN</span><h2>Contribution Model</h2></div></div><label><span>Fixed Cost / เดือน</span><input id="fixedCostInput" type="number" value="400000" /></label><div class="breakeven-result"><small>จำนวนเพลงที่ต้องขายอย่างน้อย</small><strong id="breakevenSongs">12 เพลง</strong><span>คำนวณจาก 36,000 บาท Contribution / เพลง</span></div></div>
+            </div>
+          </section>
+
+          <section class="ops-page" id="page-settings">
+            <div class="page-head"><div><span class="kicker">GUARDRAILS</span><h1>Rules, SLA & Policy</h1></div></div>
+            <div class="rules-grid">
+              <article><b>50%</b><h3>Deposit</h3><p>เริ่มงานเมื่อบริษัทรับมัดจำ</p></article>
+              <article><b>2×</b><h3>Revision</h3><p>Demo รวม Revision 2 รอบ</p></article>
+              <article><b>3H</b><h3>Vocal Session</h3><p>เกินเวลา คิดค่า Studio / Producer เพิ่ม</p></article>
+              <article><b>GATE</b><h3>Approval</h3><p>ต้อง Approved ก่อนเข้าสู่ Production</p></article>
+              <article><b>ADD</b><h3>Out of Scope</h3><p>Coach / MV / Musician / Styling แยก Add-on</p></article>
+              <article><b>PAID</b><h3>Job Fee</h3><p>จ่าย Job Fee เมื่อ Stage ส่งครบและลูกค้าชำระครบ</p></article>
+            </div>
+            <div class="panel compact"><div class="panel-head"><div><span class="kicker">CASH COLLECTION</span><h2>Payment Milestones</h2></div></div><div class="milestone"><div><strong>50%</strong><span>Booking</span></div><i></i><div><strong>30%</strong><span>Demo Approval</span></div><i></i><div><strong>20%</strong><span>Before Master / Release</span></div></div></div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="leadModal">
+      <button class="modal-close" id="modalClose">×</button>
+      <span class="kicker">NEW LEAD</span><h2>เพิ่มลูกค้าใหม่</h2>
+      <form id="newLeadForm">
+        <label><span>ชื่อ</span><input name="name" required placeholder="Artist / Parent name" /></label>
+        <div class="field-grid"><label><span>Source</span><select name="source"><option>BNI / Referral</option><option>Paid Social</option><option>Singing School</option><option>Parent Network</option><option>Open House</option></select></label><label><span>Status</span><select name="status"><option>Inquiry</option><option>Qualified</option><option>Consult</option><option>Paid</option></select></label></div>
+        <div class="field-grid"><label><span>Owner</span><select name="owner"><option>ทีมจุ๊</option><option>ทีมเอส</option><option>ทีมหนึ่ง</option><option>Post / PM</option></select></label><label><span>Value</span><input name="value" type="number" value="60000" /></label></div>
+        <label><span>Next Action</span><input name="nextAction" placeholder="Book consult / Send proposal..." /></label>
+        <button class="btn primary full" type="submit">Save Lead</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
